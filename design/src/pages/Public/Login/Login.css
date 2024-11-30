@@ -1,0 +1,65 @@
+.Login {
+  background-image: url('C:\Users\johnm\admin-dashboard-jmarvinselosa-bsit3a\public\top-view-camera-draw-with-popcorn (1).jpg'); /* Replace with the actual path to your image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.main-container {
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.form-container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.errors {
+  color: red;
+  font-size: 12px;
+}
+
+.submit-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6b4226; /* Darker brown for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-container button:disabled {
+  background-color: #d3a77a; /* Lighter brown for disabled state */
+  cursor: not-allowed;
+}
+
+.show-password {
+  margin-top: 10px;
+  color: #6b4226;
+  cursor: pointer;
+}
+
+.register-container a {
+  color: #6b4226;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
