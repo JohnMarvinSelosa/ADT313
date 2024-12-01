@@ -1,0 +1,250 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../../../../public/top-view-camera-draw-with-popcorn.jpg);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  z-index: -1;
+  overflow: auto; /* Allows scrolling if content exceeds container height */
+}
+
+
+/* Glowing effect for form-container with faster pulse animation */
+.form-container {
+  max-width: 500px;
+  padding: 1.5rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  box-shadow: 1px 1px 10px hsl(189, 82%, 52%);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: glow 0.8s infinite alternate; /* Faster pulse animation (0.8s) */
+}
+
+.register-header {
+  text-align: center; /* Center the header */
+  margin-bottom: 40px; /* Add space between the header and the form fields */
+  padding: 10px;
+}
+
+
+.register-header span {
+  color: hsl(207, 71%, 51%); /* Accent color */
+}
+
+.register-header h1 {
+  width: stretch; /* Replace this with width: stretch; */
+  font-size: 2.5rem; /* Larger font size for the title */
+  font-weight: bold; /* Make the title bold */
+  color: #3db0dd; /* Dark color for the title */
+  margin: 0; /* Remove any default margin */
+  text-transform: uppercase; /* Capitalize the title for emphasis */
+  letter-spacing: 2px; /* Add some spacing between letters */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+
+.register-header p {
+  width: stretch;
+  font-size: 15px; /* Slightly larger font size for the description */
+  color: #4799dd; /* Lighter color for description text */
+  margin-top: 10px; /* Add space between title and description */
+}
+
+.form-container > div {
+  width: stretch;
+}
+
+/* Group of input fields */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+
+input {
+  width: stretch;
+  padding: 10px 20px;
+  border: 1px solid hsla(0, 0%, 49%, 0.966);
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+/* Special styling for name fields */
+.name-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+
+
+
+
+#icon-toggle {
+  float: right;
+  margin-top: -28px;
+  margin-right: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+button {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: hsl(199, 74%, 53%);
+  border: 1px solid hsl(207, 63%, 55%);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+
+
+.register-container a {
+  text-decoration: none;
+  color: rgb(58, 202, 238);
+  font-weight: bold;
+}
+
+.register-container a:hover {
+  color: rgb(55, 203, 248); /* Hover effect */
+}
+
+.form-group label {
+  width: fit-content !important;
+  padding: 0px 10px;
+  border-radius: 50px;
+  position: relative;
+  left: 15px;
+  top: 15px;
+  font-size: 12px;
+  pointer-events: none;
+  transition: all 0.3s;
+  background-color: white;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.form-grouper{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Error message styling */
+.errors {
+  color: rgb(236, 233, 233);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submit-container {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.register-container {
+  text-align: center;
+}
+
+/* Adjust alert-box to ensure it doesn't affect layout */
+.alert-box {
+  width: auto; /* Adjust width to content */
+  position: fixed; /* Fixed positioning to avoid interference with scroll */
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure the alert box stays on top */
+  text-align: center;
+  transition: opacity 0.5s ease; /* Smooth fade-out transition */
+}
+
+.error {
+  background-color: rgba(26, 18, 18, 0.8);
+  color: white;
+}
+
+.success {
+  background-color: rgba(0, 255, 0, 0.8);
+  color: white;
+}
+
+/* For fade-out effect */
+.fade-out {
+  opacity: 0;
+  visibility: hidden; /* Ensure the element disappears after fade */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
+}
+
+
+/* Style for the scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  height: 10px; /* Height of horizontal scrollbar */
+}
+
+/* Style for the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for the track */
+  border-radius: 10px;
+}
+
+/* Style for the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 40%); /* Darker color for the thumb */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; /* Border around the thumb */
+}
+
+/* Hover effect on the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 60%); /* Darker when hovered */
+}
+
+/* Style for the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1; /* Corner color */
+}
+
+
+/* If you have something like: */
+.element {
+  width: strech;
+}
+
+/* Update it to: */
+.element {
+  width: stretch;
+}
+
+/* Style specifically for the Login button */
+button.login-button {
+  background-color: skyblue; /* Sky blue background */
+  border: 1px solid deepskyblue; /* Border with a slightly darker shade */
+  color: white; /* White text */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase; /* Capitalize the button text */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+button.login-button:hover {
+  background-color: deepskyblue; /* Slightly darker on hover */
+  box-shadow: 0 4px 10px rgba(30, 144, 255, 0.6); /* Glowing effect on hover */
+}
