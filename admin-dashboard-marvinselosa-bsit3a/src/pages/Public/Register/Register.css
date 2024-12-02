@@ -1,0 +1,86 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../../../../public/top-view-camera-draw-with-popcorn.jpg);
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    z-index: -1;
+    overflow: auto; /* Allows scrolling if content exceeds container height */
+  }
+  
+  
+  .form-container {
+    max-width: 400px; /* Reduced max-width for a smaller container */
+    padding: 1rem 1.5rem; /* Decrease padding for a compact design */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content */
+    align-items: center; /* Horizontally centers the content */
+    background-color: hsla(0, 0%, 100%, 0.9);
+    box-shadow: 1px 1px 10px hsl(0, 0%, 7%);
+    position: relative;
+    transition: all 0.3s ease;
+    animation: glow 0.8s infinite alternate; /* Retain the pulse animation */
+    text-align: center; /* Ensures that text inside the container is centered */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers text fields horizontally */
+    position: relative;
+    margin-bottom: 15px;
+    width: 100%; /* Makes sure each input field takes up the full width */
+  }
+  
+  input {
+    width: 80%; /* Make the input fields smaller */
+    padding: 8px 15px; /* Adjust padding for smaller fields */
+    font-size: 14px;
+    border: 1px solid hsla(0, 0%, 49%, 0.966);
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: transparent;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    color: #333;
+  }
+  
+  label {
+    width: fit-content !important;
+    padding: 0px 10px;
+    border-radius: 50px;
+    position: absolute;
+    left: 15px;
+    top: -10px; /* Move label above the input field */
+    font-size: 12px;
+    pointer-events: none;
+    transition: all 0.3s;
+    background-color: white;
+  }
+  
+  button {
+    width: 80%; /* Adjust button size */
+    padding: 10px 20px;
+    background-color: hsl(0, 0%, 0%);
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .name-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    margin-top: 15px; /* Move the name field lower */
+  }
+  
