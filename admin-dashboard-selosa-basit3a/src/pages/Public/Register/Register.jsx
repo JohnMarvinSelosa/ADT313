@@ -137,8 +137,7 @@ function Register() {
 
               <div>
                 <div className='form-group'>
-                  <label>First Name:</label>
-                  <input type='text' name='firstName' ref={firstNameRef} onChange={(e) => handleOnChange(e, 'firstName')} required/>
+                  <input type='text' placeholder='firstName' ref={firstNameRef} onChange={(e) => handleOnChange(e, 'firstName')} required/>
                 </div>
                 {debounceState && isFieldsDirty && firstName === '' && (
                   <span className='errors'>This field is required</span>
@@ -147,8 +146,7 @@ function Register() {
 
               <div>
                 <div className='form-group'>
-                  <label>Middle Name:</label>
-                  <input type='text' name='middleName' ref={middleNameRef} onChange={(e) => handleOnChange(e, 'middleName')} required/>
+                  <input type='text' placeholder='middleName' ref={middleNameRef} onChange={(e) => handleOnChange(e, 'middleName')} required/>
                 </div>
                 {debounceState && isFieldsDirty && middleName === '' && (
                   <span className='errors'>This field is required</span>
@@ -157,8 +155,7 @@ function Register() {
 
               <div>
                 <div className='form-group'>
-                  <label>Last Name:</label>
-                  <input type='text' name='lastName' ref={lastNameRef} onChange={(e) => handleOnChange(e, 'lastName')} required/>
+                  <input type='text' placeholder='lastName' ref={lastNameRef} onChange={(e) => handleOnChange(e, 'lastName')} required/>
                 </div>
                 {debounceState && isFieldsDirty && lastName === '' && (
                   <span className='errors'>This field is required</span>
@@ -167,8 +164,7 @@ function Register() {
 
                 <div>
                   <div className='form-group'>
-                    <label>Contact Number:</label>
-                    <input type='text' name='contactNo' ref={contactNoRef} onChange={(e) => handleOnChange(e, 'contactNo')} required/>
+                    <input type='text' placeholder='contactNo' ref={contactNoRef} onChange={(e) => handleOnChange(e, 'contactNo')} required/>
                   </div>
                   {debounceState && isFieldsDirty && contactNo === '' && (
                     <span className='errors'>This field is required</span>
@@ -177,8 +173,7 @@ function Register() {
 
               <div>
                 <div className='form-group'>
-                  <label>Email:</label>
-                  <input type='text' name='email' ref={emailRef} onChange={(e) => handleOnChange(e, 'email')} required/>
+                  <input type='text' placeholder='email' ref={emailRef} onChange={(e) => handleOnChange(e, 'email')} required/>
                   </div>
                   {debounceState && isFieldsDirty && email === '' && (
                     <span className='errors'>This field is required</span>
@@ -186,9 +181,8 @@ function Register() {
                 </div>
                 <div>
                   <div className='form-group'>
-                    <label>Password:</label>
                     <div>
-                      <input type={isShowPassword ? 'text' : 'password'} name='password' ref={passwordRef} onChange={(e) => handleOnChange(e, 'password')} />
+                      <input type={isShowPassword ? 'text' : 'password'} placeholder='password' ref={passwordRef} onChange={(e) => handleOnChange(e, 'password')} />
                       <span className={`fas ${isShowPassword ? 'fa-eye-slash' : 'fa-eye'}` } id='icon-toggle' onClick={handleShowPassword} />
                     </div>
                   </div>
