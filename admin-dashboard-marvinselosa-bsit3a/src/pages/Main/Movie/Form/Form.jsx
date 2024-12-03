@@ -85,89 +85,111 @@ const Form = () => {
 
   return (
     <>
-      <h1>{movieId !== undefined ? 'Edit ' : 'Create '} Movie</h1>
+    <h1>{movieId !== undefined ? 'Edit ' : 'Create '} Movie</h1>
 
-      {movieId === undefined && (
-        <>
-          <div className='search-container'>
-            Search Movie:{' '}
-            <input
-              type='text'
-              onChange={(event) => setQuery(event.target.value)}
-            />
-            <button type='button' onClick={handleSearch}>
-              Search
-            </button>
-            <div className='searched-movie'>
-              {searchedMovieList.map((movie) => (
-                <p key={movie.id} onClick={() => handleSelectMovie(movie)}>
-                  {movie.original_title}
-                </p>
-              ))}
-            </div>
-          </div>
-          <hr />
-        </>
-      )}
-
-      <div className='container'>
-        <form>
-          {selectedMovie && (
-            <img
-              className='poster-image'
-              src={`https://image.tmdb.org/t/p/original/${selectedMovie.poster_path}`}
-              alt={selectedMovie.original_title}
-            />
-          )}
-          <div className='field'>
-            Title:
-            <input
-              type='text'
-              value={selectedMovie ? selectedMovie.original_title : ''}
-              readOnly
-            />
-          </div>
-          <div className='field'>
-            Overview:
-            <textarea
-              rows={10}
-              value={selectedMovie ? selectedMovie.overview : ''}
-              readOnly
-            />
-          </div>
-
-          <div className='field'>
-            Popularity:
-            <input
-              type='text'
-              value={selectedMovie ? selectedMovie.popularity : ''}
-              readOnly
-            />
-          </div>
-
-          <div className='field'>
-            Release Date:
-            <input
-              type='text'
-              value={selectedMovie ? selectedMovie.release_date : ''}
-              readOnly
-            />
-          </div>
-
-          <div className='field'>
-            Vote Average:
-            <input
-              type='text'
-              value={selectedMovie ? selectedMovie.vote_average : ''}
-              readOnly
-            />
-          </div>
-
-          <button type='button' onClick={handleSave}>
-            Save
-          </button>
-        </form>
+{movieId === undefined && (
+  <>
+    <div className="search-container">
+      <label>Search Movie: </label>
+      <input
+        type="text"
+        onChange={(event) => setQuery(event.target.value)}
+        placeholder="Enter movie title"
+      />
+      <button type="button" onClick={handleSearch}>
+        Search
+      </button>
+      <div className="searched-movie">
+        {searchedMovieList.map((movie) => (
+          <p key={movie.id} onClick={() => handleSelectMovie(movie)}>
+            {movie.original_title}
+          </p>
+        ))}
       </div>
+    </div>
+    <hr />
+  </>
+)}
+
+<div className="container">
+  <form>
+    {selectedMovie && (
+      <img
+        className="poster-image"
+        src={`https://image.tmdb.org/t/p/original/${selectedMovie.poster_path}`}
+        alt={selectedMovie.original_title}
+      />
+    )}
+
+    {/* Title Field */}
+    <div className="field">
+      <label>Title: </label>
+      <input
+        type="text"
+        value={selectedMovie ? selectedMovie.original_title : ''}
+        onChange={(e) => setSelectedMovie({ ...selectedMovie, original_title: e.target.value })}
+        readOnly={movieId !== undefined}
+        placeholder="Movie Title"
+      />
+    </div>
+
+    {/* Overview Field */}
+    <div className="field">
+      <label>Overview: </label>
+      <textarea
+        rows={10}
+        value={selectedMovie ? selectedMovie.overview : ''}
+        onChange={(e) => setSelectedMovie({ ...selectedMovie, overview: e.target.value })}
+        readOnly={movieId !== undefined}
+        placeholder="Movie Overview"
+      />
+    </div>
+
+    {/* Popularity Field */}
+    <div className="field">
+      <label>Popularity: </label>
+      <input
+        type="number"
+        value={selectedMovie ? selectedMovie.popularity : ''}
+        onChange={(e) => setSelectedMovie({ ...selectedMovie, popularity: e.target.value })}
+        readOnly={movieId !== undefined}
+        placeholder="Popularity"
+        step="0.1"
+      />
+    </div>
+
+    {/* Release Date Field */}
+    <div className="field">
+      <label>Release Date: </label>
+      <input
+        type="date"
+        value={selectedMovie ? selectedMovie.release_date : ''}
+        onChange={(e) => setSelectedMovie({ ...selectedMovie, release_date: e.target.value })}
+        readOnly={movieId !== undefined}
+        placeholder="Release Date"
+      />
+    </div>
+
+    {/* Vote Average Field */}
+    <div className="field">
+      <label>Vote Average: </label>
+      <input
+        type="number"
+        value={selectedMovie ? selectedMovie.vote_average : ''}
+        onChange={(e) => setSelectedMovie({ ...selectedMovie, vote_average: e.target.value })}
+        readOnly={movieId !== undefined}
+        placeholder="Vote Average"
+        step="0.1"
+      />
+    </div>
+
+    {/* Save Button */}
+    <button type="button" onClick={handleSave}>
+      {movieId !== undefined ? 'Update' : 'Save'}
+    </button>
+  </form>
+</div>
+
       {movieId !== undefined && selectedMovie && (
         <div>
           <hr />
