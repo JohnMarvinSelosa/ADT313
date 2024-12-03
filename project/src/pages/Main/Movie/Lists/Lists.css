@@ -1,0 +1,85 @@
+.lists-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem; /* Added padding for better spacing */
+  background-color: #46494d; /* Light background for contrast */
+}
+
+.create-container {
+  align-self: flex-end;
+  margin: 1rem 0;
+}
+
+.create-container button {
+  padding: .5rem 1rem; /* Added padding for better button sizing */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.create-container button:hover {
+  background-color: #10d472; /* Darker shade on hover */
+}
+
+.table-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem; /* Added margin for spacing */
+}
+
+.movie-lists {
+  width: 100%;
+  border-collapse: collapse; /* Collapse borders for cleaner look */
+  background-color: #ffffff; /* White background for the table */
+}
+
+.movie-lists th,
+.movie-lists td {
+  border: 1px solid #dee2e6; /* Light gray border */
+  padding: 0.75rem; /* Padding for cells */
+  color: black;
+}
+
+.movie-lists th {
+  background-color: #343a40; /* Dark header background */
+  color: white; /* White text color for headers */
+  text-align: center; /* Align header text to the left */
+}
+
+.movie-lists tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.movie-lists button {
+  padding: 0.5rem 1rem; /* Medium size button */
+  margin: 0 0.5rem; /* Margin between buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; /* Set font size for readability */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+/* Edit Button (Green) */
+.movie-lists button.edit-button {
+  background-color: #28a745; /* Green for edit button */
+  color: white;
+}
+
+.movie-lists button.edit-button:hover {
+  background-color: #218838; /* Darker green shade on hover */
+}
+
+/* Delete Button (Red) */
+.movie-lists button.delete-button {
+  color: white;
+  background-color: #d62929; /* Red for delete button */
+}
+
+.movie-lists button.delete-button:hover {
+  background-color: #c82333; /* Darker red shade on hover */
+}

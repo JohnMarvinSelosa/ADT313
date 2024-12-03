@@ -1,0 +1,61 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../../../../public/top-view-camera-draw-with-popcorn.jpg);
+  background-size: cover;
+  object-fit: cover;
+  background-position: center;
+  z-index: -1;
+  overflow: auto; /* Allows scrolling if content exceeds container height */
+}
+
+/* Container for input and label */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Style for the input fields */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  padding-left: 40px; /* Space for the label inside the field */
+  border: 1px solid hsla(0, 0%, 49%, 0.966);
+  border-radius: 10px;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  font-family: "Arial", sans-serif; /* Font for the input text */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: hsl(207, 71%, 51%);
+  box-shadow: 0 0 5px hsl(207, 71%, 51%);
+}
+
+/* Style for the label inside the input field */
+label {
+  position: absolute;
+  top: 50%;
+  left: 15px; /* Inside the input field */
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: hsla(0, 0%, 49%, 0.966);
+  font-family: "Courier New", monospace; /* Font for the labels */
+  pointer-events: none; /* Ensure label doesn't block clicks on input */
+  transition: all 0.3s ease;
+}
+
+/* Move label when input is focused or contains text */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -10px; /* Move above the field */
+  left: 15px;
+  font-size: 12px;
+  color: hsl(207, 71%,)
+}
