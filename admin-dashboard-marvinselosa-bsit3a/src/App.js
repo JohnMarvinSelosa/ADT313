@@ -8,6 +8,7 @@ import Main from './pages/Main/Main';
 import Movie from './pages/Main/Movie/Movie';
 import Lists from './pages/Main/Movie/Lists/Lists';
 import Form from './pages/Main/Movie/Form/Form';
+import Casts from './pages/Main/Movie/Form/Cast/Cast';
 import Register from './pages/Public/Register/Register'; 
 
 
@@ -48,7 +49,11 @@ const router = createBrowserRouter([
             path: '/main/movies/form/:movieId?',
             element: <Form />,
             children: [
-             
+              {
+                path: '/main/movies/form/:movieId/cast-and-crews',
+                element: <Casts />
+                
+              },
               {
                 path: '/main/movies/form/:movieId/photos',
                 element: (

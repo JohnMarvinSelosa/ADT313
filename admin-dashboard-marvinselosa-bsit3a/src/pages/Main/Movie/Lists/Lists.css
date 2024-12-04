@@ -1,85 +1,126 @@
 .lists-container {
   width: 100%;
+  padding: 1rem;
+  background-color: #001f3f; /* Dark blue background */
+  color: white;
   display: flex;
   flex-direction: column;
-  padding: 1rem; /* Added padding for better spacing */
-  background-color: #46494d; /* Light background for contrast */
+  gap: 1rem;
 }
 
 .create-container {
   align-self: flex-end;
-  margin: 1rem 0;
 }
 
-.create-container button {
-  padding: .5rem 1rem; /* Added padding for better button sizing */
-  background-color: #007bff; /* Bootstrap primary color */
+.action-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 4px; /* Rounded corners for button */
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smooth hover effect */
+  transition: background-color 0.3s;
 }
 
-.create-container button:hover {
-  background-color: #10d472; /* Darker shade on hover */
+.action-button:hover {
+  background-color: #0056b3;
 }
 
 .table-container {
   width: 100%;
-  text-align: center;
-  margin-top: 1rem; /* Added margin for spacing */
+  overflow-x: auto;
 }
 
 .movie-lists {
   width: 100%;
-  border-collapse: collapse; /* Collapse borders for cleaner look */
-  background-color: #ffffff; /* White background for the table */
+  border-collapse: collapse;
+  background-color: #002a5c; /* Darker blue for table */
+  color: white;
+  font-size: 0.9rem;
 }
 
 .movie-lists th,
 .movie-lists td {
-  border: 1px solid #dee2e6; /* Light gray border */
-  padding: 0.75rem; /* Padding for cells */
-  color: black;
+  border: 1px solid #ffffff;
+  padding: 0.75rem;
+  text-align: center;
 }
 
 .movie-lists th {
-  background-color: #343a40; /* Dark header background */
-  color: white; /* White text color for headers */
-  text-align: center; /* Align header text to the left */
+  background-color: #001f3f;
+  font-weight: bold;
+}
+
+.movie-lists tr:nth-child(even) {
+  background-color: #003366; /* Striped effect */
 }
 
 .movie-lists tr:hover {
-  background-color: #f1f1f1; /* Highlight row on hover */
+  background-color: #004080; /* Highlight row on hover */
 }
 
 .movie-lists button {
-  padding: 0.5rem 1rem; /* Medium size button */
-  margin: 0 0.5rem; /* Margin between buttons */
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.25rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1rem; /* Set font size for readability */
-  transition: background-color 0.3s; /* Smooth hover effect */
+  transition: background-color 0.3s;
 }
 
-/* Edit Button (Green) */
+/* Edit Button */
 .movie-lists button.edit-button {
-  background-color: #28a745; /* Green for edit button */
+  background-color: #28a745; /* Green */
   color: white;
 }
 
 .movie-lists button.edit-button:hover {
-  background-color: #218838; /* Darker green shade on hover */
+  background-color: #218838; /* Darker green */
 }
 
-/* Delete Button (Red) */
+/* Delete Button */
 .movie-lists button.delete-button {
+  background-color: #dc3545; /* Red */
   color: white;
-  background-color: #d62929; /* Red for delete button */
 }
 
 .movie-lists button.delete-button:hover {
-  background-color: #c82333; /* Darker red shade on hover */
+  background-color: #c82333; /* Darker red */
 }
+
+.no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #cccccc;
+  background-color: #002a5c;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.button-row {
+  text-align: right; /* Align button to the right */
+  padding: 1rem;
+  background-color: #002a5c; /* Same as table background */
+  border-bottom: 2px solid #001f3f; /* Separate visually from headers */
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.no-data {
+  text-align: center;
+  color: #cccccc;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+

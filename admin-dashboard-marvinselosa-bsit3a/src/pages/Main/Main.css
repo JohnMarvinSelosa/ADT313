@@ -2,21 +2,26 @@
   display: flex;
   overflow: hidden;
   max-height: 100vh;
+  background-color: darkblue; /* Dark blue background for the main container */
 }
+
 .Main .container {
   display: flex;
   width: 100vw;
 }
+
 .Main .container .outlet {
   flex-grow: 3;
   padding: 1rem;
   overflow-y: auto;
 }
+
 .Main .container .navigation {
-  background-color: aliceblue;
+  background-color: darkblue; /* Dark blue background for the navigation section */
   padding-top: 40px;
   height: 100vh;
 }
+
 .Main .container .navigation ul {
   list-style: none;
   overflow: hidden;
@@ -27,10 +32,12 @@
 .Main .container .navigation ul li {
   padding: 10px 80px 10px 20px;
 }
+
 .Main .container .navigation ul li.active,
 .Main .container .navigation ul li:hover {
   background: #ccc;
 }
+
 .Main .container .navigation ul li a {
   text-decoration: none;
 }

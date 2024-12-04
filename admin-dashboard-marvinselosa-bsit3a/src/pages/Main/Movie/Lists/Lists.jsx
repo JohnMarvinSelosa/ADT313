@@ -3,15 +3,13 @@ import './Lists.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-
 const Lists = () => {
   const accessToken = localStorage.getItem('accessToken');
   const navigate = useNavigate();
-  
+
   const [lists, setLists] = useState([]);
 
   const getMovies = () => {
-    // Get the movies from the API or database
     axios.get('/movies').then((response) => {
       setLists(response.data);
     });
@@ -31,12 +29,11 @@ const Lists = () => {
           },
         })
         .then(() => {
-          const tempLists = [...lists];
-          const index = lists.findIndex((movie) => movie.id === id);
-          if (index !== undefined || index !== -1) {
-            tempLists.splice(index, 1);
-            setLists(tempLists);
-          }
+          const updatedLists = lists.filter((movie) => movie.id !== id);
+          setLists(updatedLists);
+        })
+        .catch((error) => {
+          console.error('Error deleting movie:', error);
         });
     }
   };
@@ -46,57 +43,56 @@ const Lists = () => {
       <div className="create-container">
         <button
           type="button"
-          onClick={() => {
-            navigate('/main/movies/form');
-          }}
+          onClick={() => navigate('/main/movies/form')}
           className="action-button"
         >
           Create New
         </button>
       </div>
       <div className="table-container">
-        <table className="movie-lists">
-          <thead>
-            <tr>
-              <th>No.</th>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Popularity</th>
-              <th>Release Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {lists.map((movie, index) => (
-              <tr key={movie.id}>
-                <td>{index + 1}</td>
-                <td>{movie.id}</td>
-                <td>{movie.title}</td>
-                <td>{movie.popularity}</td>
-                <td>{movie.releaseDate}</td>
-                <td>
-                  <button
-                    className="edit-button"
-                    type="button"
-                    style={{ width: '30%' }}
-                    onClick={() => {
-                      navigate('/main/movies/form/' + movie.id);
-                    }}
-                  >
-                    EDIT
-                  </button>
-                  <button
-                    className="delete-button"
-                    type="button"
-                    style={{ width: '30%' }}
-                    onClick={() => handleDelete(movie.id)}
-                  >DELETE
-                  </button>
-                </td>
+        {lists.length > 0 ? (
+          <table className="movie-lists">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Popularity</th>
+                <th>Release Date</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {lists.map((movie, index) => (
+                <tr key={movie.id}>
+                  <td>{index + 1}</td>
+                  <td>{movie.id}</td>
+                  <td>{movie.title}</td>
+                  <td>{movie.popularity}</td>
+                  <td>{movie.releaseDate}</td>
+                  <td>
+                    <button
+                      className="edit-button"
+                      onClick={() => navigate('/main/movies/form/' + movie.id)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="delete-button"
+                      onClick={() => handleDelete(movie.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div className="no-data">
+            <p>No movies found. Please add some!</p>
+          </div>
+        )}
       </div>
     </div>
   );
