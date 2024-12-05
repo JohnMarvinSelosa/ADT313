@@ -1,0 +1,126 @@
+.lists-container {
+  width: 100%;
+  padding: 1rem;
+  background-color: #001f3f; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.create-container {
+  align-self: flex-end;
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.movie-lists {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #002a5c; 
+  color: white;
+  font-size: 0.9rem;
+}
+
+.movie-lists th,
+.movie-lists td {
+  border: 1px solid #ffffff;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.movie-lists th {
+  background-color: skyblue; 
+  font-weight: bold;
+}
+
+.movie-lists tr:nth-child(even) {
+  background-color: #003366; 
+}
+
+.movie-lists tr:hover {
+  background-color: #004080; 
+}
+
+.movie-lists button {
+  padding: 0.5rem 0.75rem;
+  margin: 0 0.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.movie-lists button.edit-button {
+  background-color: #28a745; 
+  color: white;
+}
+
+.movie-lists button.edit-button:hover {
+  background-color: #218838; 
+}
+
+
+.movie-lists button.delete-button {
+  background-color: #dc3545; 
+  color: white;
+}
+
+.movie-lists button.delete-button:hover {
+  background-color: #c82333; 
+}
+
+.no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #cccccc;
+  background-color: #002a5c;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.button-row {
+  text-align: right; 
+  padding: 1rem;
+  background-color: #002a5c; 
+  border-bottom: 2px solid #001f3f; 
+}
+
+.action-button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.no-data {
+  text-align: center;
+  color: #cccccc;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
