@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
+.cast-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+.cast-content {
+  display: flex;
+  gap: 20px;
+}
+
+.Cast-View-Box {
+  flex: 2;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.card-display-cast {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.image-casts {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.container {
+  padding: 10px;
+  text-align: center;
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.delete-button {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Search-Box {
+  flex: 1;
+  background-color: #444;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.search-box-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-search-person {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.button-search, .save-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-search {
+  background-color: #ff9800;
+  color: white;
+}
+
+.save-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cast-detail-box {
+  margin-top: 20px;
+}
+
+.image-container-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.img-cast {
+  max-width: 250px;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.character-name {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.no-cast {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.edit-back-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.edit-btn, .back-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-btn {
+  background-color: hsl(214, 83%, 55%);
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: hsl(214, 90%, 60%);
+  transform: scale(1.05);
+}
+
+.back-btn {
+  background-color: hsl(0, 0%, 50%);
+  color: white;
+}
+
+.back-btn:hover {
+  background-color: hsl(0, 0%, 60%);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .cast-content {
+    flex-direction: column;
+  }
+  
+  .Cast-View-Box, .Search-Box {
+    flex: none;
+    width: 100%;
+  }
+}
