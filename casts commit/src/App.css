@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+:root {
+  --primary-light: #3498db;
+  --secondary-light: #2ecc71;
+  --background-light: #f4f6f7;
+  --text-primary-light: #2c3e50;
+  --text-secondary-light: #34495e;
+  
+  --primary-dark: #5dade2;
+  --secondary-dark: #48c774;
+  --background-dark: #121212;
+  --surface-dark: #1e1e1e;
+  --text-primary-dark: #f0f0f0;
+  --text-secondary-dark: #d0d0d0;
+
+  --transition-speed: 0.3s;
+  --page-transition-speed: 0.5s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 
+    background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: var(--background-light);
+  color: var(--text-primary-light);
 }
 
-.App-header {
-  background-color: #468ddf;
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-primary-dark);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: var(--text-primary-dark);
+}
+
+body.dark-mode p {
+  color: var(--text-secondary-dark);
+}
+
+body.dark-mode .right-panel {
+  background-color: var(--surface-dark) !important;
+  color: var(--text-primary-dark);
+}
+
+body.dark-mode input {
+  background-color: var(--surface-dark);
+  color: var(--text-primary-dark);
+  border-color: #444 !important;
+}
+
+.app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--primary-light);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 
+    background-color var(--transition-speed) ease,
+    transform var(--transition-speed) ease;
+}
+
+.theme-toggle:hover {
+  background-color: color-mix(in srgb, var(--primary-light) 90%, white);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .theme-toggle {
+  background-color: var(--primary-dark);
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: color-mix(in srgb, var(--primary-dark) 90%, white);
+}
+
+.theme-toggle-homepage {
+  top: 160px;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .app-container {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  .theme-toggle {
+    top: 5px;
+    right: 5px;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .app-container {
+    padding: 0 5px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  input, button {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 5px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+}
+
+input, button {
+  font-family: inherit;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.shadow-light {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .shadow-light {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+
+body.dark-mode .buttons button,
+body.dark-mode .login-buttons button,
+body.dark-mode .register-buttons button {
+  background-color: var(--primary-dark);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+body.dark-mode .buttons button:hover,
+body.dark-mode .login-buttons button:hover,
+body.dark-mode .register-buttons button:hover {
+  background-color: color-mix(in srgb, var(--primary-dark) 90%, white);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.page-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }

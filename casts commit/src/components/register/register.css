@@ -1,0 +1,66 @@
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  background: url('C:\Users\user\Desktop\codes\base1\jm1\public\top-view-camera-draw-with-popcorn.jpg') no-repeat center center fixed;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.register-form h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.show-password {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.register-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.register-buttons button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: #3498db;
+  color: white;
+}
+
+.secondary-btn {
+  background: #95a5a6;
+  color: white;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
