@@ -1,0 +1,160 @@
+.search-container {
+    padding: 2rem;
+    min-height: 100vh;
+    background: rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+.search-box {
+    position: sticky;
+    top: 1.2rem;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 auto 2rem auto;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.8rem;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(135, 206, 235, 0.2);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(135, 206, 235, 0.3);
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #87CEEB;
+    box-shadow: 0 0 0 2px rgba(135, 206, 235, 0.15);
+}
+
+.search-box input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.search-box button {
+    padding: 0.6rem 1.2rem;
+    background: #87CEEB;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.search-box button:hover {
+    background: #75bcd8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(135, 206, 235, 0.3);
+}
+
+.search-movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.search-movie-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.search-movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.search-movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.search-movie-card:hover img {
+    transform: scale(1.05);
+}
+
+.search-movie-info {
+    padding: 1.5rem;
+    background: white;
+}
+
+.search-movie-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.search-movie-info p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.search-movie-info button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #87CEEB;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-movie-info button:hover {
+    background: #75bcd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+}
+
+.loading {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    color: #87CEEB;
+}
+
+@media (max-width: 768px) {
+    .search-box {
+        width: 95%;
+        padding: 0.6rem;
+    }
+
+    .search-box input {
+        font-size: 0.9rem;
+    }
+
+    .search-box button {
+        padding: 0.6rem 1rem;
+    }
+
+    .search-movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+

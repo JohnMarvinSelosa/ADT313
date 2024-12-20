@@ -1,0 +1,99 @@
+.register-container {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(/public/top-view-camera-draw-with-popcorn.jpg) center/cover;
+	padding: 20px;
+}
+
+.register-content {
+	background: rgba(255, 255, 255, 0.95);
+	padding: 40px;
+	border-radius: 20px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 450px;
+}
+
+.register-content h1 {
+	color: #87CEEB;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 2.2rem;
+}
+
+.register-content p {
+	color: #666;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.register-form {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form input[type="text"],
+.register-form input[type="tel"] {
+	padding: 12px 16px;
+	border: 2px solid #e0e0e0;
+	border-radius: 8px;
+	font-size: 1rem;
+	transition: border-color 0.3s;
+}
+
+.register-form input:focus {
+	border-color: #87CEEB;
+	outline: none;
+}
+
+.show-password {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #666;
+}
+
+.register-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 20px;
+}
+
+.register-buttons button {
+	padding: 12px;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: transform 0.2s, background-color 0.2s;
+}
+
+.register-buttons button:first-child {
+	background-color: #87CEEB;
+	color: white;
+}
+
+.register-buttons button:last-child {
+	background-color: white;
+	color: #87CEEB;
+	border: 2px solid #87CEEB;
+}
+
+.register-buttons button:hover {
+	transform: translateY(-2px);
+}
+
+.error-message {
+	background-color: #ffe6e6;
+	color: #ff4444;
+	padding: 12px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	text-align: center;
+}
